@@ -1,17 +1,14 @@
 <?php
 
-use Behat\Behat\Exception\PendingException,
-    Behat\Gherkin\Node\PyStringNode;
+use Behat\Behat\Context\BehatContext;
 
-require_once 'SpecContext.php';
-require_once 'CommandLineContext.php';
-require_once 'ExampleGroupsContext.php';
-
-class FeatureContext extends SpecContext
+class FeatureContext extends BehatContext
 {
-    public function __construct(array $params)
+    /**
+     * @param array $parameters
+     */
+    public function __construct(array $parameters)
     {
-        $this->useContext('command_line', new CommandContext($params));
-        $this->useContext('example_groups', new ExampleGroupsContext($params));
+        $this->useContext('phpspec', new PhpSpecContext());
     }
 }
