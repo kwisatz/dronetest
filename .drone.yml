@@ -1,0 +1,10 @@
+image: bradrydzewski/php:5.4
+script:
+  - curl -sS https://getcomposer.org/installer | php
+  - composer self-update
+  - composer install
+  - ./vendor/bin/phpspec run
+notify:
+  email:
+    recipients:
+      - david@1024.lu
