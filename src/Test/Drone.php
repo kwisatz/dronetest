@@ -9,4 +9,9 @@ class Drone
     {
      return 'Hello World!';
     }
+
+    public function doesNotExist()
+    {
+        // TODO: write logic here
+    }
 }

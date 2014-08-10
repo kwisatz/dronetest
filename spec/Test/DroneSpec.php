@@ -16,4 +16,9 @@ class DroneSpec extends ObjectBehavior
 	{
 		$this->sayHello()->shouldReturn('Hello World!');
 	}
+
+	function it_should_fail()
+	{
+		$this->doesNotExist()->shouldReturn('I DO exist!');
+	}
 }
